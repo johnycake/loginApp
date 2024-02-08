@@ -1,0 +1,15 @@
+{
+  "general": {
+    "placeholder": "zadajte"
+  },
+  "loginForm": {
+    "email": "E-mail",
+    "password": "Heslo",
+    "submit": "Prihlásiť sa",
+    "loginError": "Momentálne sa nedá prihlásiť"
+  },
+  "validation": {
+    "required": "pole nesmie byt prázdne",
+    "emailFormat": "nesprávny formát emailu"
+  }
+}

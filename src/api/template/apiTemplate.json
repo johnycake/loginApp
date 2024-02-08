@@ -1,0 +1,93 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "TBLogin",
+    "description": "TBLogin",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://127.0.0.1/some/api",
+      "description": "DEV"
+    }
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "description": "Login",
+        "requestBody": {
+          "description": "Login Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginApiRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Login Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BaseResponse": {
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "errorDetail": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "LoginApiResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseResponse"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "loggedIn": {
+                "type": "boolean",
+                "nullable": false,
+                "example": "true"
+              }
+            }
+          }
+        ]
+      },
+      "LoginApiRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": false,
+            "example": "aaa@bbb.cc"
+          },
+          "password": {
+            "type": "string",
+            "nullable": false,
+            "example": "fdb6s8bxf/b8"
+          }
+        }
+      }
+    }
+  }
+}

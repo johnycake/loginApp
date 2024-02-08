@@ -1,0 +1,15 @@
+{
+  "general": {
+    "placeholder": "enter"
+  },
+  "loginForm": {
+    "email": "E-mail",
+    "password": "Password",
+    "submit": "Login",
+    "loginError": "We cannot login you right now"
+  },
+  "validation": {
+    "required": "required",
+    "emailFormat": "bad email format"
+  }
+}
